@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "test:unit": "vitest --environment jsdom --root src/",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "gh-pages-deploy": "node scripts/gh-pages-deploy.js"
+    "gh-pages-deploy": "node scripts/gh-pages-deploy.cjs"
   },
   "dependencies": {
     "@vue/test-utils": "^2.0.0-rc.18",

@@ -14,8 +14,7 @@ const count = ref(0)
     <p>Don't miss our fantastic <a href="https://originalcreation.se" target="_blank">web site</a>!
     </p>
   </div>
-
-  </template>
+</template>
 
 <style scoped>
 .read-the-docs {

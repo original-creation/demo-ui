@@ -11,7 +11,7 @@ const count = ref(0)
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
-    <p>See our <a href="https://originalcreation.se" target="_blank">web site</a>!
+    <p>Don't miss our <a href="https://originalcreation.se" target="_blank">web site</a>!
     </p>
   </div>
 

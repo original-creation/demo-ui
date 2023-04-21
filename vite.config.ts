@@ -6,7 +6,7 @@ import dsv from '@rollup/plugin-dsv'
 
 // for options see https://vitejs.dev/config/
 export default defineConfig({
-  base: "/",
+  base: "/demo-ui/",
   build: {
     rollupOptions: {
       input: {

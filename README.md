@@ -40,6 +40,9 @@ npm run build
 npm run gh-pages-deploy
 ```
 
+On every push, Github Acctions does automatic deployment so no need to run this locally.
+
+
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
 
 ```sh

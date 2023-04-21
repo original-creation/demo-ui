@@ -1,0 +1,32 @@
+{
+  "name": "original-creaation-demo",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "copy": "mv index.html",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "test:unit": "vitest --environment jsdom --root src/",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "gh-pages-deploy": "node scripts/gh-pages-deploy.js"
+  },
+  "dependencies": {
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "@rollup/plugin-dsv": "^3.0.1",
+    "@rushstack/eslint-patch": "^1.1.4",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.0",
+    "vue-tsc": "^1.2.0",
+    "eslint": "^8.22.0",
+    "eslint-plugin-vue": "^9.3.0",
+    "execa": "5.1.1",
+    "jsdom": "^20.0.1",
+    "prettier": "^2.7.1",
+    "vitest": "^0.24.3"
+  }
+}

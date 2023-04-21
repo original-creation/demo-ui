@@ -1,0 +1,28 @@
+name: Deploy to github pages
+on:
+  push:
+    branches:
+      - main
+jobs:
+  gh-pages-deploy:
+    name: Build, test and deploy to Github pages
+    runs-on: ubuntu-latest  
+    steps:
+      - name: Setup Node.js for use with actions
+        uses: actions/setup-node@v3
+        with:
+          node-version:  16.x
+
+      - name: Checkout branch
+        uses: actions/checkout@v3
+
+      - name: Clean install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm run test:unit
+
+      - name: Run deploy script
+        run: |
+          git config user.name "enbohm" && git config user.email "andreas@enbohms.se"
+          npm run gh-pages-deploy

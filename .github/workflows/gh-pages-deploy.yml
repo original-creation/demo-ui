@@ -24,7 +24,7 @@ jobs:
 
       - name: Run deploy script
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "enbohm" && git config user.email "andreas@enbohms.se"
           npm run gh-pages-deploy

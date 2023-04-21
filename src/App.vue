@@ -5,10 +5,10 @@ import HelloWorld from './components/HelloWorld.vue'
 <template>
   <div>
     <a href="https://originalcreation.se" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Original Creation logo" />
+      <img src="/vite.svg" class="logo" alt="Original Creation AB logo" />
     </a>
     <a href="https://originalcreation.se" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Original Creation logo" />
+      <img src="./assets/vue.svg" class="logo vue" alt="Original Creation AB logo" />
     </a>
   </div>
   <HelloWorld msg="Original Creation Demo Site" />

@@ -9,6 +9,10 @@ export default createRouter({
       component: Home,
     },
     {
+      path: '/contact',
+      component: () => import('@/views/Contact.vue'),
+    },
+    {
       path: "/:catchAll(.*)",
       component: Home,
     }

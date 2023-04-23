@@ -3,7 +3,6 @@
 import { ref } from 'vue';
 import MainChoice from './MainChoice.vue';
 import { MockService } from '@/services/mockservice';
-import Dag from './DAG.vue';
 
 const mService = new MockService();
 const searchActor = ref<string>("");
@@ -51,7 +50,7 @@ function displayDAG(value: string){
     </div>
 
     <div v-show="dagOn">
-      <Dag :uuid="dagUuid"></Dag>
+      
     </div>
   
   <!--   {{ searchActor  }} - {{ searchType  }} - {{ searchValue  }} -->

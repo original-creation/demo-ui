@@ -16,7 +16,6 @@ const demoOn = ref(false);
     <main id="main">
       <router-view />
     </main>
-    
   </div>
   <div v-show="demoOn">
     <DemoApp/>

@@ -20,10 +20,6 @@ import { Actor } from '@/types/actor';
 
 </script>
 <template> 
-
-    
-    <!-- @click="emits.call(undefined, 'browseme')"-->
-
     <div class="display"  v-if="!searchOn">
         <div class="rowDisplay" @click="browseOn=true">Browse</div>
         <div @click="searchOn=true">Search</div>
@@ -60,7 +56,7 @@ import { Actor } from '@/types/actor';
             <div class="left"  @click="productsOn=!productsOn, certificationOn=false">List products</div> 
             <div class="right" @click="certificationOn=!certificationOn, productsOn=false" >List certifications</div> 
           </div>
-          
+          <br>
           <div class="product-list" v-show="productsOn">
             <div v-for="p in mService.getProductItems(selectedBranchActor)">
                 <div class="product-item" @click="emits.call(undefined, 'browseme', selectedBranchActor.uuid, p.id)">{{ p.name }}</div>
@@ -80,6 +76,7 @@ import { Actor } from '@/types/actor';
 <style scoped>
 .display {
     display: inline-flex;
+    cursor: pointer;
 }
 .rowDisplay {
     padding-right: 20px;

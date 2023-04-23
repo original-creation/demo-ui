@@ -2,8 +2,8 @@
 
 import { ref } from 'vue';
 import MainChoice from './MainChoice.vue';
-import Dag from './Dag.vue';
 import { MockService } from '@/services/mockservice';
+import Dag from './DAG.vue';
 
 const mService = new MockService();
 const searchActor = ref<string>("");
@@ -36,6 +36,7 @@ function displayDAG(value: string){
 </script>
 
 <template>
+  <div><img src="../assets/oclogo_trans.png"/></div>
   <div class="demoContainer">
     <div v-show="searchType!='undefined'" @click="searchType='undefined'; dagOn=false"> <img src="../assets/icons8-back-16.png"/></div>
     <div v-show="searchType==='undefined'">
@@ -60,8 +61,7 @@ function displayDAG(value: string){
 
 </template>
 <style scoped>
-
 .demoContainer{
-  height: 60%;
+  padding: 20px;
 }
 </style>

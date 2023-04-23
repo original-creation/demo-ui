@@ -5,7 +5,7 @@
         "productgroups" : [{"id":"pg-cu", "name":"Koppar"},{"id":"pg-zn", "name":"Zink"},{"id":"pg-al", "name":"Aluminium"}],
         "certifications" : [{"id":"cert-9001", "name":"ISO 9001:2015", "url":"https://www.boliden.com/4af72f/globalassets/sustainability/certifications/business-area-smelters/b.-ronnkar-certificate-90011400145001-en.pdf"},
          {"id":"cert-14001", "name":"ISO 14001:2015", "url":"https://www.boliden.com/4af72f/globalassets/sustainability/certifications/business-area-smelters/b.-ronnkar-certificate-90011400145001-en.pdf"},
-          {"id":"cert-45001", "name":"ISO 45001:2018", "url":"https://www.boliden.com/4af72f/globalassets/sustainability/certifications/business-area-smelters/b.-ronnkar-certificate-90011400145001-en.pdf"}]
+         {"id":"cert-45001", "name":"ISO 45001:2018", "url":"https://www.boliden.com/4af72f/globalassets/sustainability/certifications/business-area-smelters/b.-ronnkar-certificate-90011400145001-en.pdf"}]
     },
     {
         "uuid": "73cfbd55-2bb9-4c14-bb2c-68d1ffc8f6ad",

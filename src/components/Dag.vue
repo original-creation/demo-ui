@@ -1,8 +1,5 @@
 <script setup lang = "ts">
-import { MockService } from '@/services/mockservice';
 //import cytoscape from 'cytoscape';
-
-    const mService = new MockService();
 
     const props = defineProps(['uuid']);
 

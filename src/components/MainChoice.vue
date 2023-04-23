@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, Ref } from 'vue'
 import { MockService } from '../services/mockservice';
-import { Actor } from '../types/actor';
+import { Branch } from '@/types/branch';
+import { BranchRole } from '@/types/branch_role';
+import { Actor } from '@/types/actor';
     
     const emits = defineEmits(["searchme", "browseme"])
     const searchOn = ref(false);
@@ -10,10 +12,11 @@ import { Actor } from '../types/actor';
     const certificationOn = ref(false);
     const searchValue = "ff8cf69c-968c-47bc-b834-f1cbb9f08932"
 
+
     const mService = new MockService();
-    let selectedBranch = ref(null);
-    let selectedBranchRole = ref(null);
-    let selectedBranchActor : Actor = ref(null);
+    let selectedBranch :  Ref<Branch |null> = ref(null);
+    let selectedBranchRole : Ref<BranchRole |null> = ref(null);
+    let selectedBranchActor :  Ref<Actor |null>  = ref(null);
 
 </script>
 <template> 

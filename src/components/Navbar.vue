@@ -71,19 +71,24 @@ nav {
 }
 
 @media screen and (max-width: 600px) {
-    .nav-links {
-        flex-wrap: wrap;
-    }
-
-    .nav-links li {
-        flex: 1 1 100%;
-        position: relative;
-    }
-
-    .nav-links li .sub-nav-links {
-        position: static;
-        display: none;
-    }
+  .nav-menu {
+    display: none;
+  }
+  .nav-toggle {
+    display: block;
+  }
+  .nav-menu ul {
+    flex-direction: column;
+  }
+  .nav-menu li {
+    margin: 10px 0;
+  }
+  .nav-item-has-submenu:hover .submenu {
+    display: none;
+  }
+  .nav-toggle.active ~ .nav-menu {
+    display: block;
+  }
 }
 </style>
   

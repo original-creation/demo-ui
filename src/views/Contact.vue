@@ -1,10 +1,6 @@
-<script setup lang="ts">
-import HelloWorld from '../components/HelloWorld.vue'
-</script>
-
 <template>
-  <HelloWorld msg="Original Creation Demo Site" />
   <div>
+    <h1>Original Creation Demo Site</h1>
     Contact us at info@originalcreation.se
   </div>
 </template>

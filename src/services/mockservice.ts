@@ -41,6 +41,7 @@ export class MockService {
     }
 
     public getDAGDetails(uuid: string) : Dag[] {
+      console.log(uuid);
       return [];
     }
   }

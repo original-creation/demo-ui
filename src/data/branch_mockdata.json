@@ -1,0 +1,70 @@
+[
+  {
+    "id": 1,
+    "name": "Fordonsindustri",
+    "description": "descritpion",
+    "roles": [
+      {
+        "id": 1,
+        "name": "Underleverantör",
+        "actors": [
+          {
+            "id": 1,
+            "uuid": "900a8226-5ae9-4444-9fe2-4e0d330622c4",
+            "name": "Boliden"
+          },
+          {
+            "id": 2,
+            "uuid": "73cfbd55-2bb9-4c14-bb2c-68d1ffc8f6ad",
+            "name": "Kamis Iron"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Producenter",
+        "actors": []
+      },
+      {
+        "id": 3,
+        "name": "Återförsäljare",
+        "actors": []
+      },
+      {
+        "id": 4,
+        "name": "Återvinning",
+        "actors": []
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Gruvindustri",
+    "description": "descritpion"
+  },
+  {
+    "id": 3,
+    "name": "Skogsindustri",
+    "description": "descritpion"
+  },
+  {
+    "id": 4,
+    "name": "Bygg och fastighet",
+    "description": "descritpion"
+  },
+  {
+    "id": 5,
+    "name": "Metallindustri",
+    "description": "descritpion"
+  },
+  {
+    "id": 6,
+    "name": "Plastindustri",
+    "description": "descritpion"
+  },
+  {
+    "id": 7,
+    "name": "Textil",
+    "description": "descritpion"
+  }
+]

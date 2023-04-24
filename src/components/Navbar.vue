@@ -2,6 +2,7 @@
     <nav>
         <ul class="nav-links">
             <li><router-link to="/">Home</router-link></li>
+            <li><router-link to="/demo">Start demo</router-link></li>
             <li>
                 <a href="#">Products</a>
                 <ul class="sub-nav-links">

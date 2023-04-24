@@ -9,6 +9,10 @@ export default createRouter({
       component: Home,
     },
     {
+      path: '/demo',
+      component: () => import('@/views/Demo.vue'),
+    },
+    {
       path: '/contact',
       component: () => import('@/views/Contact.vue'),
     },

@@ -12,7 +12,6 @@ const demoOn = ref(false);
     <header id="nav-wrapper">
       <Navbar />
     </header>
-    <div><button @click="demoOn = true" v-show="!demoOn">Demo</button></div>
     <main id="main">
       <router-view />
     </main>

@@ -1,9 +1,9 @@
 <template>
-  <div class="container mx-auto w-2/3 bg-gray-400 rounded-xl shadow border p-4 m-8">
+  <div class="container width:50% mx-auto w-2/3 bg-gray-400 rounded-xl shadow border p-4 m-8">
     <h2>Original Creation Demo Site</h2>
   </div>
   <div class="card">
-    <p>Check out our fantastic<div class="text-blue-600"><a href="https://originalcreation.se" target="_blank">website</a></div>
+    <p>You can also check out our <span class="text-blue-600"><a href="https://originalcreation.se" target="_blank">official website</a></span>
     </p>
   </div>
 </template>

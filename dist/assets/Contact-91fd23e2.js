@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as o,a,b as n}from"./index-ba880cd5.js";const c={},r=n("h1",null,"Original Creation Demo Site",-1);function s(i,_){return t(),o("div",null,[r,a(" Contact us at info@originalcreation.se ")])}const d=e(c,[["render",s]]);export{d as default};

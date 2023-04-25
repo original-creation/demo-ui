@@ -3,6 +3,7 @@
 import { ref } from 'vue';
 import MainChoice from './MainChoice.vue';
 import { MockService } from '@/services/mockservice';
+import RenderTree from './RenderTree.vue';
 
 const mService = new MockService();
 const searchActor = ref<string>("");
@@ -57,6 +58,7 @@ function displayDAG(value: string){
   </div>
 
 
+  <RenderTree></RenderTree>
 
 </template>
 <style scoped>

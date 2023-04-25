@@ -1,15 +1,15 @@
 import branchmock_data from '../data/branch_mockdata.json';
 import subcontractor_mockdata from '../data/subcontractor_mockdata.json';
 import deliveries_mockdata from '../data/deliveries_mockdata.json';
-//import dag_detail from '../data/deliveries_detail_mockdata.json';
-
+import deliveries_detail_nodes from '../data/deliveries_detail_mockdata.json';
 import { ProductItem } from '../types/product_item';
 import { Actor } from '../types/actor';
 import { Branch } from '../types/branch';
 import { CertificationItem } from '../types/certification_item';
 import { Delivery } from '@/types/delivery';
-import { Dag } from '@/types/dag';
 import { Subcontractor } from '@/types/subcontractor';
+import { Node } from '@/types/node';
+
 
 
 
@@ -40,9 +40,13 @@ export class MockService {
       return deliveries_mockdata.filter((x) => x.actor_uuid===actor).filter((y) => y.type===pgid);
     }
 
-    public getDAGDetails(uuid: string) : Dag[] {
-      console.log(uuid);
-      return [];
+    public getNodeData(uuid: string) : Node {
+      const details: Node[] = JSON.parse(JSON.stringify(deliveries_detail_nodes))
+      const detailNode = details.filter((x)=>x.id===uuid).at(0);
+      if(detailNode===undefined){
+        return {id:"0", name:"No Data"};
+      }
+      return detailNode;
     }
   }
    

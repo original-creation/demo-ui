@@ -1,1 +1,0 @@
-import{_ as o,o as a,c as t,k as n,a as e}from"./index-93ae709a.js";const r={},c=e("div",{class:"container mx-auto w-2/3 bg-gray-400 rounded-xl shadow border p-4 m-8"},[e("h2",null,"Original Creation Demo Site")],-1);function s(i,d){return a(),t("div",null,[c,n(" Contact us at info@originalcreation.se ")])}const _=o(r,[["render",s]]);export{_ as default};

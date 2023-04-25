@@ -1,42 +1,188 @@
 [
   {
     "id": "ff8cf69c-968c-47bc-b834-f1cbb9f08932",
-    "name": "ff8cf69c-968c-47bc-b834-f1cbb9f08932",
+    "name": "Cu2 - 2021-05-02",
+    "content": [
+      { "key": "Hashfunction", "value": "x2yS1234324109" },
+      { "key": "Tidsstämpel", "value": "2020-01-02" },
+      { "key": "Signering", "value": "Globometrics" }
+    ],
     "children": [
       {
-        "id": "ff8cf69c-968c-47bc-b834-f1cbb9f08932",
+        "id": "303d3b61e247187b1e66ce49e18ad2a1878781d2e3aafbade676ea7df04786e2",
+        "name": "Boliden",
+        "parent": { "id": 1, "name": "Parent" },
+        "content": [
+          { "key": "Material", "value": "Cu 99,99%" },
+          { "key": "Varav återvunnet", "value": "70%" },
+          { "key": "Nyproducerat", "value": "30% " },
+          { "key": "Mängd", "value": "1 ton" },
+          { "key": "Ursprung", "value": "" },
+          { "key": "Rönnskär smälltverk", "value": "70%" },
+          { "key": "Aitik dagbrott", "value": "30%" },
+          { "key": "Koldioxidutsläpp", "value": "1540 kg CO2ew/ton Cu" },
+          { "key": "Hashfunction", "value": "x2yS1109" },
+          { "key": "Tidsstämpel", "value": "2021-05-02" },
+          { "key": "Signering", "value": "Boliden" }
+        ],
+        "children": [
+          {
+            "id": "688787d8ff144c502c7f5cffaafe2cc588d86079f9de88304c26b0cb99ce91c6",
+            "name": "Boliden - 202103",
+            "parent": { "id": 4, "name": "Parent" },
+            "content": [
+              { "key": "Material", "value": "Cu 99,99%" },
+              { "key": "Varav återvunnet", "value": "70%" },
+              { "key": "Nyproducerat", "value": "30% " },
+              { "key": "Mängd", "value": "1 ton" },
+              { "key": "Ursprung", "value": "" },
+              { "key": "Rönnskär smälltverk", "value": "70%" },
+              { "key": "Aitik dagbrott", "value": "30%" },
+              { "key": "Koldioxidutsläpp", "value": "1540 kg CO2ew/ton Cu" },
+              { "key": "Hashfunction", "value": "x2yS1109" },
+              { "key": "Tidsstämpel", "value": "2021-05-02" },
+              { "key": "Signering", "value": "Boliden" }
+            ]
+          },
+          {
+            "id": "388eb347c107555137e91f72f5218c5695900871f7079a78161e86007a359d09",
+            "name": "388eb347...",
+            "parent": { "id": 4, "name": "Parent" },
+            "content": [
+              { "key": "Transport", "value": "2022-02-02" },
+              { "key": "Återvinningsstation", "value": "Lusharpan" }
+            ],
+            "children": [
+              {
+                "id": "3072c954b058783821f549c42ed2e1bb5da5b924f9cda4ac7d5ee00bfa0979d8",
+                "name": "3072c954...",
+                "parent": { "id": 4, "name": "Parent" },
+                "content": [
+                  { "key": "Material", "value": "N/A" },
+                  { "key": "Varav återvunnet", "value": "70%" },
+                  { "key": "Nyproducerat", "value": "30% " },
+                  { "key": "Hashfunction", "value": "x238457834" },
+                  { "key": "Tidsstämpel", "value": "2021-05-02" },
+                  { "key": "Signering", "value": "Boliden" }
+                ]
+              },
+              {
+                "id": "9ca95443df086f0f2f2417a063db80cf5dc8d6984f3493f3464dbd631aa82120",
+                "name": "9ca954...",
+                "parent": { "id": 4, "name": "Parent" },
+                "content": [
+                  { "key": "Koldioxidutsläpp", "value": "140 kg CO2ew/ton Cu" },
+                  { "key": "Hashfunction", "value": "x2yS124234109" },
+                  { "key": "Tidsstämpel", "value": "2021-05-02" },
+                  { "key": "Signering", "value": "Skanska" }
+                ]
+              },
+              {
+                "id": "26cf0810c51dce8e7ea7da7bb02fb0e600005a973a2f45a153a3cffe8fc1128f",
+                "name": "26cf081...",
+                "parent": { "id": 4, "name": "Parent" },
+                "content": [
+                  { "key": "Material", "value": "Cu 99,99%" },
+                  { "key": "Varav återvunnet", "value": "70%" },
+                  { "key": "Nyproducerat", "value": "30% " },
+                  { "key": "Mängd", "value": "1 ton" },
+                  { "key": "Ursprung", "value": "" },
+                  { "key": "Rönnskär smälltverk", "value": "70%" },
+                  { "key": "Aitik dagbrott", "value": "30%" },
+                  {
+                    "key": "Koldioxidutsläpp",
+                    "value": "1540 kg CO2ew/ton Cu"
+                  },
+                  { "key": "Hashfunction", "value": "x2yS1109" },
+                  { "key": "Tidsstämpel", "value": "2021-05-02" },
+                  { "key": "Signering", "value": "Boliden" }
+                ]
+              },
+              {
+                "id": "8738c3e9388b551e91c6e9778c87628cda6a8e504ac0c18dd26dd4400163d7f5",
+                "name": "8738c3...",
+                "parent": { "id": 4, "name": "Parent" },
+                "content": [
+                  { "key": "Material", "value": "Cu 99,99%" },
+                  { "key": "Varav återvunnet", "value": "70%" },
+                  { "key": "Nyproducerat", "value": "30% " },
+                  { "key": "Mängd", "value": "1 ton" },
+                  { "key": "Ursprung", "value": "" },
+                  { "key": "Rönnskär smälltverk", "value": "70%" },
+                  { "key": "Aitik dagbrott", "value": "30%" },
+                  {
+                    "key": "Koldioxidutsläpp",
+                    "value": "1540 kg CO2ew/ton Cu"
+                  },
+                  { "key": "Hashfunction", "value": "x2yS1109" },
+                  { "key": "Tidsstämpel", "value": "2021-05-02" },
+                  { "key": "Signering", "value": "Boliden" }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "b01947a8b461f84159c19e23c92e7ad3bee84a886091f08cb5e34b7193eae61e",
+            "name": "b0194...",
+            "parent": { "id": 4, "name": "Parent" },
+            "content": [
+              { "key": "Material", "value": "Cu 99,99%" },
+              { "key": "Varav återvunnet", "value": "70%" },
+              { "key": "Nyproducerat", "value": "30% " },
+              { "key": "Mängd", "value": "1 ton" },
+              { "key": "Ursprung", "value": "" },
+              { "key": "Rönnskär smälltverk", "value": "70%" },
+              { "key": "Aitik dagbrott", "value": "30%" },
+              { "key": "Koldioxidutsläpp", "value": "1540 kg CO2ew/ton Cu" },
+              { "key": "Hashfunction", "value": "x2yS1109" },
+              { "key": "Tidsstämpel", "value": "2021-05-02" },
+              { "key": "Signering", "value": "Boliden" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7fbc2516-d184-4e61-96b2-a475ef8e861e",
+    "name": "7fbc2516-d184-4e61-96b2-a475ef8e861e",
+    "children": [
+      {
+        "id": "7fbc2516-d184-4e61-96b2-a475ef8e861e",
         "name": "Child 1",
         "parent": { "id": 1, "name": "Parent" },
-        "children" : [
+        "children": [
           {
-            "id": "ff8cf69c-968c-47bc-b834-f1cbb9f08932",
+            "id": "7fbc2516-d184-4e61-96b2-a475ef8e861e",
             "name": "Boliden - 202103",
-            "parent": { "id": 4, "name": "Parent" }
+            "parent": { "id": 4, "name": "Parent" },
+            "content": ["Data", "N/A"]
           }
         ]
       },
       {
-        "id": "ff8cf69c-968c-47bc-b834-f1cbb9f08932",
+        "id": "7fbc2516-d184-4e61-96b2-a475ef8e861e",
         "name": "Child 2",
-        "parent": { "id": 1, "name": "Parent" }
-      },
-      {
-        "id": "ff8cf69c-968c-47bc-b834-f1cbb9f08932",
-        "name": "Child 3",
-        "parent": { "id": 3, "name": "Parent" },
-        "children" : [
+        "parent": { "id": 1, "name": "Parent" },
+        "children": [
           {
-            "id": "ff8cf69c-968c-47bc-b834-f1cbb9f08932",
+            "id": "7fbc2516-d184-4e61-96b2-a475ef8e861e",
+            "name": "Child 3",
+            "parent": { "id": 3, "name": "Parent" },
+            "children": [
+              {
+                "id": "7fbc2516-d184-4e61-96b2-a475ef8e861e",
+                "name": "Child 4",
+                "parent": { "id": 4, "name": "Parent" }
+              }
+            ]
+          },
+          {
+            "id": "7fbc2516-d184-4e61-96b2-a475ef8e861e",
             "name": "Child 4",
             "parent": { "id": 4, "name": "Parent" }
           }
         ]
-        
-      },
-      {
-        "id": "ff8cf69c-968c-47bc-b834-f1cbb9f08932",
-        "name": "Child 4",
-        "parent": { "id": 4, "name": "Parent" }
       }
     ]
   }

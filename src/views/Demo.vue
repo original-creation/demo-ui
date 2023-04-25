@@ -41,18 +41,29 @@ function displayDAG(value: string){
     <div v-show="searchType!='undefined'">
       <div v-show="!dagOn">
         <div v-for="i in mService.getProductDeliveries(searchActor, searchValue)">
-          <div @click="displayDAG(i.uuid)">{{ i.date }}</div>
+          <div class="item" @click="displayDAG(i.uuid)">{{ i.date }}</div>
         </div>
       </div>
     </div>
 
     <div v-show="dagOn">
-      <RenderTree></RenderTree>
+      <RenderTree :uuid=dagUuid></RenderTree>
     </div>
   </div>
 </template>
 <style scoped>
 .demoContainer{
   padding: 20px;
+}
+.item{
+  background-color: lightgray;
+  border: 2pt solid #2DD48F;
+  margin: 3px;
+}
+.item:hover{
+  background-color: #2DD48F;
+  border: 2pt solid #2DD48F;
+  margin: 3px;
+  color:white;
 }
 </style>

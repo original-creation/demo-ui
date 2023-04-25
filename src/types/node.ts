@@ -3,4 +3,5 @@ export interface Node {
     name: string;
     parent?: Node;
     children?: Node[];
+    content: [ { "key" : string, "value": string }];
   }

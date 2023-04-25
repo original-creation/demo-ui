@@ -44,7 +44,7 @@ export class MockService {
       const details: Node[] = JSON.parse(JSON.stringify(deliveries_detail_nodes))
       const detailNode = details.filter((x)=>x.id===uuid).at(0);
       if(detailNode===undefined){
-        return {id:"0", name:"No Data"};
+        return {id:"0", name:"No Data", content: [{"key": "string" ,"value": "string" }]};
       }
       return detailNode;
     }

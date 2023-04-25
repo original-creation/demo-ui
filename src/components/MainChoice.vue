@@ -69,7 +69,6 @@ import { Actor } from '@/types/actor';
         </div>
       </div>
     </div>
-
     </div>
 </template>
 <style scoped>

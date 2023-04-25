@@ -1,96 +1,34 @@
 <template>
-    <nav>
-        <ul class="nav-links">
-            <li><router-link to="/">Home</router-link></li>
-            <li><router-link to="/demo">Start demo</router-link></li>
-            <li>
-                <a href="#">Products</a>
-                <ul class="sub-nav-links">
-                    <li><a href="#">Product 1</a></li>
-                    <li><a href="#">Product 2</a></li>
-                    <li><a href="#">Product 3</a></li>
-                </ul>
-            </li>
-            <li><router-link to="/contact">Contact Us</router-link></li>
-        </ul>
-    </nav>
+  <nav class="flex items-center justify-between flex-wrap 1bg-teal-500 p-6 bg-gray-500">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+      <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" />
+      </svg>
+      <span class="font-semibold text-xl tracking-tight">Original Creation</span>
+    </div>
+    <div class="block lg:hidden">
+      <button
+        class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+        </svg>
+      </button>
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+      <div class="text-xl lg:flex-grow text-black">
+        <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-400 hover:text-white mr-8">
+          <router-link to="/">Home</router-link>
+        </a>
+        <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-400 hover:text-white mr-4">
+          <router-link to="/demo">Start demo</router-link>
+        </a>
+        <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-400 hover:text-white mr-4 ml-4">
+          <router-link to="/contact">Contact Us</router-link>
+        </a>
+      </div>
+    </div>
+  </nav>
 </template>
-<style scoped>
-nav {
-    background-color: #333;
-    color: #fff;
-}
-
-.nav-links {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    margin: 0;
-    padding: 10px;
-}
-
-.nav-links li {
-    position: relative;
-}
-
-.nav-links a {
-    color: #fff;
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-    background-color: #333;
-    /* default background color */
-}
-
-.nav-links a:hover {
-    background-color: #555;
-}
-
-.nav-links a.selected {
-    background-color: transparent;
-}
-
-.sub-nav-links {
-    background-color: #555;
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    margin-top: 0;
-    transition: opacity 0.2s ease-in-out;
-    opacity: 0;
-}
-
-.sub-nav-links li {
-    display: block;
-}
-
-.nav-links li:hover .sub-nav-links {
-    display: block;
-    opacity: 1;
-}
-
-@media screen and (max-width: 600px) {
-  .nav-menu {
-    display: none;
-  }
-  .nav-toggle {
-    display: block;
-  }
-  .nav-menu ul {
-    flex-direction: column;
-  }
-  .nav-menu li {
-    margin: 10px 0;
-  }
-  .nav-item-has-submenu:hover .submenu {
-    display: none;
-  }
-  .nav-toggle.active ~ .nav-menu {
-    display: block;
-  }
-}
-</style>
-  
-  

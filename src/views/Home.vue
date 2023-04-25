@@ -1,9 +1,11 @@
-<script setup lang="ts">
-import HelloWorld from '../components/HelloWorld.vue'
-</script>
-
 <template>
-  <HelloWorld msg="Original Creation Demo Site" />
+  <div class="container mx-auto w-2/3 bg-gray-400 rounded-xl shadow border p-4 m-8">
+    <h2>Original Creation Demo Site</h2>
+  </div>
+  <div class="card">
+    <p>Check out our fantastic<div class="text-blue-600"><a href="https://originalcreation.se" target="_blank">website</a></div>
+    </p>
+  </div>
 </template>
 
 <style scoped>

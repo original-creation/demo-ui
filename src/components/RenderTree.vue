@@ -87,22 +87,31 @@ function rerenderTree() {
     border: red solid 1pt;
 }
 
+.node {
+    fill: #2196F3;
+    stroke:  #041a2c(129, 175, 212);
+    stroke-width: 4px;
+    fill-opacity: 100%;
+
+}
+
 .node circle {
-    fill: #3f3085;
-    stroke: rgb(129, 175, 212);
-    stroke-width: 5px;
-    fill-opacity: 75%;
+    border: #041a2c;
+    stroke:  #041a2c(129, 175, 212);
+    stroke-width: 4px;
+    fill-opacity: 100%;
 
 }
 
 .node text {
     font-size: 14px;
+    color: #212121;
     font-family: sans-serif;
 }
 
 .link {
     fill: none;
-    stroke: #a3a1a7;
+    stroke: #BDBDBD;
     stroke-width: 2px;
 }
 </style>

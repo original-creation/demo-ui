@@ -3,7 +3,7 @@
 import { ref } from 'vue';
 import MainChoice from '../components/MainChoice.vue';
 import { MockService } from '@/services/mockservice';
-import RenderTree from './RenderTree.vue';
+import RenderTree from '../components/RenderTree.vue';
 
 const mService = new MockService();
 const searchActor = ref<string>("");
@@ -32,8 +32,8 @@ function displayDAG(value: string){
   dagUuid.value = value;
 }
 </script>
-
 <template>
+  <div><img src="../assets/oclogo_trans.png"/></div>
   <div class="demoContainer">
     <div v-show="searchType!='undefined'" @click="searchType='undefined'; dagOn=false"> <img src="../assets/icons8-back-16.png"/></div>
     <div v-show="searchType==='undefined'">
@@ -48,15 +48,9 @@ function displayDAG(value: string){
     </div>
 
     <div v-show="dagOn">
-      
+      <RenderTree></RenderTree>
     </div>
-  
-  <!--   {{ searchActor  }} - {{ searchType  }} - {{ searchValue  }} -->
   </div>
-
-
-  <RenderTree></RenderTree>
-
 </template>
 <style scoped>
 .demoContainer{

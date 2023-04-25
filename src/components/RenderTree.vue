@@ -131,8 +131,6 @@ function rerenderTree() {
 }
 
 .container {
-    width: 100%;
-    height: 100%;
     border: lightgray solid 1pt;
 }
 

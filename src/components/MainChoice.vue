@@ -32,14 +32,13 @@ import { Actor } from '@/types/actor';
         
     </div>
 
-    <div id="browse" v-show="browseOn && !searchOn">
-
+    <div id="browse" v-show="browseOn && !searchOn" class="content">
         <select id="branch"  v-model="selectedBranch" @change="selectedBranchActor = null">
       <option disabled value="">Please select one</option>
       <option v-for="option in mService.getBranchNames()" :value="option">{{ option.name }}</option>
     </select>
     
-    <div v-if="selectedBranch!=undefined" class="content">
+    <div v-if="selectedBranch!=undefined" >
         <select id="role" v-model="selectedBranchRole"  @change="selectedBranchActor = null">
         <option disabled value="">Please select one</option>
         <option v-for="option in selectedBranch.roles" :value="option">{{ option.name }}</option>
@@ -59,13 +58,13 @@ import { Actor } from '@/types/actor';
           <br>
           <div class="product-list" v-show="productsOn">
             <div v-for="p in mService.getProductItems(selectedBranchActor)">
-                <div class="product-item" @click="emits.call(undefined, 'browseme', selectedBranchActor.uuid, p.id)">{{ p.name }}</div>
+                <button class="product-item" @click="emits.call(undefined, 'browseme', selectedBranchActor.uuid, p.id)">{{ p.name }}</button>
             </div>
         </div>
 
         <div class="product-list" v-show="certificationOn">
             <div v-for="c in mService.getCertifications(selectedBranchActor)">
-                <div class="product-item" >{{ c.name }}</div> <!-- @click="emits.call(undefined, 'browseme', selectedBranchActor.uuid, c.id)"-->
+                <button class="product-item" >{{ c.name }}</button> <!-- @click="emits.call(undefined, 'browseme', selectedBranchActor.uuid, c.id)"-->
             </div>
         </div>
       </div>
@@ -74,6 +73,12 @@ import { Actor } from '@/types/actor';
     </div>
 </template>
 <style scoped>
+
+.content{
+  border-bottom: 1px solid lightgray;
+  width: 100%;
+  min-height: 100px;
+}
 .display {
     display: inline-flex;
     cursor: pointer;
@@ -92,15 +97,14 @@ import { Actor } from '@/types/actor';
   padding: 5px;
 }
 .product-item{
-  background-color: azure;
-  border: 1px solid gray;
+  background-color: lightgray;
+  border: 2pt solid #2DD48F;
   margin: 3px;
-  border-radius: 25%;
   min-width: 70px;
-  
 }
 .product-list{
   display: inline-flex;
   padding: 5px;
+  color: #6B7280;
 }
 </style>

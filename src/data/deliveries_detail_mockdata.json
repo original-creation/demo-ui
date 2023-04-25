@@ -10,17 +10,7 @@
         "children" : [
           {
             "id": "ff8cf69c-968c-47bc-b834-f1cbb9f08932",
-            "name": "Child 2",
-            "parent": { "id": 1, "name": "Parent" }
-          },
-          {
-            "id": "ff8cf69c-968c-47bc-b834-f1cbb9f08932",
-            "name": "Child 3",
-            "parent": { "id": 3, "name": "Parent" }
-          },
-          {
-            "id": "ff8cf69c-968c-47bc-b834-f1cbb9f08932",
-            "name": "Child 4",
+            "name": "Boliden - 202103",
             "parent": { "id": 4, "name": "Parent" }
           }
         ]
@@ -37,16 +27,6 @@
         "children" : [
           {
             "id": "ff8cf69c-968c-47bc-b834-f1cbb9f08932",
-            "name": "Child 2",
-            "parent": { "id": 1, "name": "Parent" }
-          },
-          {
-            "id": "ff8cf69c-968c-47bc-b834-f1cbb9f08932",
-            "name": "Child 3",
-            "parent": { "id": 3, "name": "Parent" }
-          },
-          {
-            "id": "ff8cf69c-968c-47bc-b834-f1cbb9f08932",
             "name": "Child 4",
             "parent": { "id": 4, "name": "Parent" }
           }
@@ -60,6 +40,4 @@
       }
     ]
   }
-
-
 ]

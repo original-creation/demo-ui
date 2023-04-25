@@ -1,4 +1,10 @@
 <template>
+
+    <div id="dataInfoBox" class="infoBox" v-show="visibleBox">
+        {{  currentInfoBox?.title }}
+        {{  currentInfoBox?.content }}
+        hasjklhd asjlkdl sajd
+    </div>
     <div>
         <div class="container" ref="container"></div>
         <button @click="rerenderTree">Rerender Tree</button>
@@ -6,10 +12,19 @@
 </template>
   
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, Ref } from 'vue';
 import * as d3 from 'd3';
 import { Node } from '@/types/node';
 import { MockService } from '../services/mockservice'
+
+interface InfoBox{
+    title:string,
+    content:string
+}
+
+const visibleBox = ref(false);
+
+const currentInfoBox : Ref<InfoBox> = ref({title : "", content: ""});
 
 const mockService = new MockService();
 const data = mockService.getNodeData("");
@@ -18,6 +33,9 @@ const container = ref<HTMLDivElement | null>(null);
 let svg: d3.Selection<SVGSVGElement, unknown, null, undefined>;
 let treeLayout: d3.TreeLayout<Node>;
 let rootNode: d3.HierarchyNode<Node>;
+
+
+    
 
 onMounted(() => {
     const width = 350;
@@ -28,12 +46,18 @@ onMounted(() => {
         .attr('height', height)
         .attr('width', width);
 
+  
 
     treeLayout = d3.tree<Node>().size([width - 50, height - 50]);
-
     rootNode = d3.hierarchy(data);
-    renderTree();
 });
+
+function displayInfoBox(event: MouseEvent, node: d3.HierarchyNode<Node>){
+    console.log("to remove later" + event.x);
+    visibleBox.value = true;
+    currentInfoBox.value.content = node.data.name;
+    currentInfoBox.value.title = node.data.id;
+}
 
 function renderTree() {
     const links = treeLayout(rootNode).links();
@@ -57,10 +81,12 @@ function renderTree() {
         .join('g')
         .attr('class', 'node')
         .attr('transform', (d: any) => `translate(${d.x},${d.y + 30})`)
-        .on('click', (event, d) => console.log(d.data.name + event));
+        .on('click', (event, d) => displayInfoBox(event, d))
+        .on('mouseover', (event, d) => displayInfoBox(event, d))
+        .on('mouseout', () => visibleBox.value=false);
 
     nodes.append('circle')
-        .attr('r', 10);
+        .attr('r', 15);
 
     nodes.append('text')
         .attr('dx', '-3em')
@@ -81,6 +107,12 @@ function rerenderTree() {
 </script>
   
 <style>
+.infoBox{
+    border: yellow;
+    background-color: green;
+    position: absolute;
+}
+
 .container {
     width: 100%;
     height: 100%;
@@ -92,6 +124,7 @@ function rerenderTree() {
     stroke:  #041a2c(129, 175, 212);
     stroke-width: 4px;
     fill-opacity: 100%;
+    cursor: crosshair;
 
 }
 

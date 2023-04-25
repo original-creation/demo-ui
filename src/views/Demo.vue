@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 import { ref } from 'vue';
-import MainChoice from './MainChoice.vue';
+import MainChoice from '../components/MainChoice.vue';
 import { MockService } from '@/services/mockservice';
 import RenderTree from './RenderTree.vue';
 
@@ -31,12 +31,9 @@ function displayDAG(value: string){
   dagOn.value = true;
   dagUuid.value = value;
 }
-
-
 </script>
 
 <template>
-  <div><img src="../assets/oclogo_trans.png"/></div>
   <div class="demoContainer">
     <div v-show="searchType!='undefined'" @click="searchType='undefined'; dagOn=false"> <img src="../assets/icons8-back-16.png"/></div>
     <div v-show="searchType==='undefined'">

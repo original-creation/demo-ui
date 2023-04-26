@@ -6,35 +6,40 @@
         </div>
     </div>
     <div id="dataInfoBox" class="infoBox" v-show="visibleBox">
-        <div id="title">{{  currentInfoBox?.title }}</div>
+        <div id="title">{{ currentInfoBox?.title }}</div>
         <div id="content">
             <div v-for=" cpost in currentInfoBox.content">
-                <div style="display: flex;"><div><b>{{ cpost.key }}:</b></div><div style="padding-left: 20px;"> {{ cpost.value }}</div></div>
+                <div style="display: flex;">
+                    <div><b>{{ cpost.key }}:</b></div>
+                    <div style="padding-left: 20px;"> {{ cpost.value }}</div>
+                </div>
             </div>
         </div>
     </div>
 </template>
   
 <script setup lang="ts">
-import { ref, onMounted, Ref } from 'vue';
+import { ref, onMounted, Ref, watch } from 'vue';
 import * as d3 from 'd3';
 import { Node } from '@/types/node';
 import { MockService } from '../services/mockservice'
 
-const props = defineProps<{ uuid: string }>()
-  
+const props = defineProps<{ uuid: string }>();
+const visibleBox = ref(false);
+const mockService = new MockService();
+const nodeData = mockService.getNodeData("");
 
-interface InfoBox{
-    title:string,
+watch(() => props.uuid, () => {
+    console.log("property is now: "+props.uuid);
+    rerenderTree();
+});
+
+interface InfoBox {
+    title: string,
     content: { key: string, value: string }[];
 }
 
-const visibleBox = ref(false);
-
-const currentInfoBox : Ref<InfoBox> = ref({title : "", content: [{"key":"key", "value":"value"}]});
-
-const mockService = new MockService();
-const data = mockService.getNodeData("");
+const currentInfoBox: Ref<InfoBox> = ref({ title: "", content: [{ "key": "key", "value": "value" }] });
 
 const container = ref<HTMLDivElement | null>(null);
 let svg: d3.Selection<SVGSVGElement, unknown, null, undefined>;
@@ -50,13 +55,13 @@ onMounted(() => {
         .attr('height', height)
         .attr('width', width);
 
-        
+
     treeLayout = d3.tree<Node>().size([width + -50, height - 50]);
-    rootNode = d3.hierarchy(data);
-    //rerenderTree();
+    rootNode = d3.hierarchy(nodeData);
 });
 
-function displayInfoBox(event: MouseEvent, node: d3.HierarchyNode<Node>){
+
+function displayInfoBox(event: MouseEvent, node: d3.HierarchyNode<Node>) {
     console.log("to remove later" + event.x);
     visibleBox.value = true;
     currentInfoBox.value.content = node.data.content;
@@ -86,8 +91,8 @@ function renderTree() {
         .attr('class', 'node')
         .attr('transform', (d: any) => `translate(${d.x},${d.y + 30})`)
         .on('click', (event, d) => displayInfoBox(event, d));
-        //.on('mouseover', (event, d) => displayInfoBox(event, d));
-        //.on('mouseout', () => visibleBox.value=false);
+    //.on('mouseover', (event, d) => displayInfoBox(event, d));
+    //.on('mouseout', () => visibleBox.value=false);
 
     nodes.append('circle')
         .attr('r', 15);
@@ -111,19 +116,21 @@ function rerenderTree() {
 </script>
   
 <style>
-.infoBox{
+.infoBox {
     border: #2DD48F;
     background-color: #6B7280;
     position: relative;
     padding: 5px;
     margin: 2px;
 }
-.infoBox #title{
-    background-color:white;
+
+.infoBox #title {
+    background-color: white;
     padding: 5px;
     margin: 5px;
 }
-.infoBox #content{
+
+.infoBox #content {
     text-align: left;
     background-color: white;
     padding: 10px;
@@ -136,7 +143,7 @@ function rerenderTree() {
 
 .node {
     fill: #2DD48F;
-    stroke:  #041a2c(129, 175, 212);
+    stroke: #041a2c(129, 175, 212);
     stroke-width: 4px;
     fill-opacity: 100%;
     cursor: crosshair;

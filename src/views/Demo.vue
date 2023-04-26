@@ -13,11 +13,13 @@ const searchValue = ref<string>("");
 const dagOn = ref(false);
 const dagUuid = ref<string>("");
 
+
 function search(value: string) {
   searchValue.value = value;
   searchType.value="uuid";
   dagOn.value = true;
   dagUuid.value = value;
+  console.log("value to search for is : "+value);
 }
 
 function browse(actor: string, value: string) {
@@ -31,6 +33,7 @@ function displayDAG(value: string){
   dagOn.value = true;
   dagUuid.value = value;
 }
+
 </script>
 <template>
   <div class="demoContainer">

@@ -3,7 +3,7 @@
     <h2>Original Creation Demo Site</h2>
   </div>
   <div class="card">
-    <p>TEST 123 You can also check out our <span class="text-blue-600"><a href="https://originalcreation.se" target="_blank">official website</a></span>
+    <p>You can also check out our <span class="text-blue-600"><a href="https://originalcreation.se" target="_blank">official website</a></span>
     </p>
   </div>
 </template>

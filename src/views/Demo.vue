@@ -36,37 +36,22 @@ function displayDAG(value: string){
 
 </script>
 <template>
-  <div class="demoContainer">
-    <div v-show="searchType!='undefined'" @click="searchType='undefined'; dagOn=false"> <img src="../assets/icons8-back-16.png"/></div>
+  <div class="bg-gray-300 container">
+    <div v-show="searchType!='undefined'" @click="searchType='undefined'; dagOn=false" class="p-2 text-center hover:bg-white cursor-pointer">
+      <button class="bg-transparent"><img src="../assets/icons8-back-16.png" class="text-center" /></button>
+      </div>
     <div v-show="searchType==='undefined'">
       <MainChoice @searchme="search" @browseme="browse"></MainChoice>
     </div>
     <div v-show="searchType!='undefined'">
       <div v-show="!dagOn">
         <div v-for="i in mService.getProductDeliveries(searchActor, searchValue)">
-          <div class="item" @click="displayDAG(i.uuid)">{{ i.date }}</div>
+          <div class="border-slate-100 border p-2 hover:bg-white cursor-pointer" @click="displayDAG(i.uuid)">{{ i.date }}</div>
         </div>
       </div>
     </div>
-
     <div v-show="dagOn">
       <RenderTree :uuid=dagUuid></RenderTree>
     </div>
   </div>
 </template>
-<style scoped>
-.demoContainer{
-  padding: 20px;
-}
-.item{
-  background-color: lightgray;
-  border: 2pt solid #2DD48F;
-  margin: 3px;
-}
-.item:hover{
-  background-color: #2DD48F;
-  border: 2pt solid #2DD48F;
-  margin: 3px;
-  color:white;
-}
-</style>

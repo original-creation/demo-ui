@@ -21,16 +21,15 @@ let selectedBranchActor: Ref<Actor | null> = ref(null);
 
 </script>
 <template>
-  <div class="display" v-if="!searchOn">
-    <div class="rowDisplay" @click="browseOn = true">Browse</div>
-    <div @click="searchOn = true">Search</div>
+  <div class="container row-auto flex-row m-2 flex" v-if="!searchOn">
+    <div class="text-center hover:bg-white p-1 cursor-pointer w-1/2" @click="browseOn = true">Browse</div>
+    <div class="text-center hover:bg-white p-1 cursor-pointer w-1/2" @click="searchOn = true">Search</div>
   </div>
-
-  <div class="display">
-    <div v-show="searchOn" class="rowDisplay" @click="searchOn = false"><img src="../assets/icons8-back-16.png" /></div>
-    <div v-show="searchOn" class="rowDisplay" id="searchBar"><input v-model=searchValue /></div>
-    <div v-show="searchOn" @click="searchOn = true, emits.call('yes', 'searchme', searchValue)">Search</div>
-
+  
+  <div v-show="searchOn" class="text-center hover:bg-white p-1 cursor-pointer w-1/3" @click="searchOn = false"><img src="../assets/icons8-back-16.png" /></div>
+  <div class="container flex-row m-2 flex p-1 w-auto"> 
+    <div v-show="searchOn" class="text-center p-1 cursor-pointer w-3/4" id="searchBar"><input v-model=searchValue class="w-full" /></div>
+    <div v-show="searchOn" class="text-center hover:bg-white p-1 cursor-pointer w-1/4" @click="searchOn = true, emits.call('yes', 'searchme', searchValue)">Search</div>
   </div>
 
   <div id="browse" v-show="browseOn && !searchOn" class="content">
@@ -52,20 +51,19 @@ let selectedBranchActor: Ref<Actor | null> = ref(null);
       </div>
 
       <div v-if="selectedBranchActor != undefined">
-        <div class="row display">
-          <div class="left" @click="productsOn = !productsOn, certificationOn = false">List products</div>
-          <div class="right" @click="certificationOn = !certificationOn, productsOn = false">List certifications</div>
+        <div class="container flex-row flex p-1 w-auto">
+          <div class="text-center hover:bg-white p-1 cursor-pointer w-1/2" @click="productsOn = !productsOn, certificationOn = false">List products</div>
+          <div class="text-center hover:bg-white p-1 cursor-pointer w-1/2" @click="certificationOn = !certificationOn, productsOn = false">List certifications</div>
         </div>
-        <br>
-        <div class="product-list" v-show="productsOn">
+        <div class="container flex-row m-2 flex p-1 min-w-fit" v-show="productsOn">
           <div v-for="p in mService.getProductItems(selectedBranchActor)">
-            <button class="product-item" @click="emits.call(undefined, 'browseme', selectedBranchActor.uuid, p.id)">{{
-              p.name }}</button>
+            <div class="w-auto text-center hover:bg-white p-1 cursor-pointer border-red-50 border pl-5 pr-5 m-2"  @click="emits.call(undefined, 'browseme', selectedBranchActor.uuid, p.id)">{{
+              p.name }}</div>
           </div>
         </div>
-        <div class="product-list" v-show="certificationOn">
+        <div class="container flex-row m-2 flex p-1 min-w-fit" v-show="certificationOn">
           <div v-for="c in mService.getCertifications(selectedBranchActor)">
-            <button class="product-item">{{ c.name }}</button>
+            <div class="w-auto text-center hover:bg-white p-1 cursor-pointer border-red-50 border pl-5 pr-5 m-2">{{ c.name }}</div>
             <!-- @click="emits.call(undefined, 'browseme', selectedBranchActor.uuid, c.id)"-->
           </div>
         </div>
@@ -73,43 +71,3 @@ let selectedBranchActor: Ref<Actor | null> = ref(null);
     </div>
   </div>
 </template>
-<style scoped>
-.content {
-  border-bottom: 1px solid lightgray;
-  width: 100%;
-  min-height: 100px;
-}
-
-.display {
-  display: inline-flex;
-  cursor: pointer;
-}
-
-.rowDisplay {
-  padding-right: 20px;
-}
-
-.row {
-  align-items: center;
-}
-
-.left {
-  padding: 5px;
-}
-
-.right {
-  padding: 5px;
-}
-
-.product-item {
-  background-color: lightgray;
-  border: 2pt solid #2DD48F;
-  margin: 3px;
-  min-width: 70px;
-}
-
-.product-list {
-  display: inline-flex;
-  padding: 5px;
-  color: #6B7280;
-}</style>

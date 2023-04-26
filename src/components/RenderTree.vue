@@ -1,21 +1,22 @@
 <template>
-    <div>{{ props.uuid }}</div><br>
+    <div class="border border-red-50 p-1 m-1">{{ props.uuid }}</div><br>
     <div>
-        <div class="container" ref="container">
-            <button @click="rerenderTree">Rerender Tree</button>
-        </div>
+
     </div>
-    <div id="dataInfoBox" class="infoBox" v-show="visibleBox">
-        <div id="title">{{ currentInfoBox?.title }}</div>
-        <div id="content">
+    <div id="dataInfoBox" class="border-spacing-2 border-emerald-400 border-2 w-fit m-2 bg-slate-200" v-show="visibleBox">
+        <div class="overflow-ellipsis bg-slate-400  border-emerald-400 border pb-2 pt-1 mb-1 ">{{ currentInfoBox?.title }}</div>
+        <div>
             <div v-for=" cpost in currentInfoBox.content">
-                <div style="display: flex;">
-                    <div><b>{{ cpost.key }}:</b></div>
-                    <div style="padding-left: 20px;"> {{ cpost.value }}</div>
+                <div class="text-left hover:bg-white p-1 cursor-pointer flex flex-row">
+                    <div class="text-left pr-10 cursor-pointer w-1/3 font-bold">{{ cpost.key }}:</div>
+                    <div class="text-left pl-10 cursor-pointer w-2/3"> {{ cpost.value }}</div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="" ref="container">
+            <button @click="rerenderTree">&nbsp;&nbsp;&nbsp;</button>
+        </div>
 </template>
   
 <script setup lang="ts">
@@ -79,7 +80,7 @@ function renderTree() {
     svg.selectAll('.link')
         .data(links)
         .join('line')
-        .attr('class', 'link')
+        .attr('class', 'stroke-slate-200 fill-slate-800 stroke-2')
         .attr('x1', (d) => d.source.x)
         .attr('y1', (d) => d.source.y + 30)
         .attr('x2', (d) => d.target.x)
@@ -88,18 +89,20 @@ function renderTree() {
     const nodes = svg.selectAll('.node')
         .data(rootNode.descendants())
         .join('g')
-        .attr('class', 'node')
+        .attr('class', 'fill-slate-400 stroke-slate-200 stroke-2 hover:fill-slate-500 cursor-pointer')
         .attr('transform', (d: any) => `translate(${d.x},${d.y + 30})`)
         .on('click', (event, d) => displayInfoBox(event, d));
     //.on('mouseover', (event, d) => displayInfoBox(event, d));
     //.on('mouseout', () => visibleBox.value=false);
 
     nodes.append('circle')
-        .attr('r', 15);
+        .attr('r', 15)
+        .attr('class', 'stroke-slate-900');
 
     nodes.append('text')
-        .attr('dx', '-3em')
-        .attr('dy', '-1em')
+        .attr('dx', '-15')
+        .attr('dy', '-18')
+        .attr('class', 'stroke-slate-900 stroke-1')
         .text((d) => d.data.name);
 
     if (!container.value) {
@@ -114,60 +117,3 @@ function rerenderTree() {
     renderTree();
 }
 </script>
-  
-<style>
-.infoBox {
-    border: #2DD48F;
-    background-color: #6B7280;
-    position: relative;
-    padding: 5px;
-    margin: 2px;
-}
-
-.infoBox #title {
-    background-color: white;
-    padding: 5px;
-    margin: 5px;
-}
-
-.infoBox #content {
-    text-align: left;
-    background-color: white;
-    padding: 10px;
-    margin: 5px;
-}
-
-.container {
-    border: lightgray solid 1pt;
-}
-
-.node {
-    fill: #2DD48F;
-    stroke: #041a2c(129, 175, 212);
-    stroke-width: 4px;
-    fill-opacity: 100%;
-    cursor: crosshair;
-
-}
-
-.node circle {
-    border: #2DD48F;
-    stroke: #6B7280;
-    stroke-width: 4px;
-    fill-opacity: 100%;
-
-}
-
-.node text {
-    font-size: 14px;
-    font-family: sans-serif;
-    color: #6B7280;
-}
-
-.link {
-    fill: none;
-    stroke: #BDBDBD;
-    stroke-width: 2px;
-}
-</style>
-  

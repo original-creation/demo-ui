@@ -36,8 +36,8 @@ function displayDAG(value: string){
 
 </script>
 <template>
-  <div class="bg-gray-300 container">
-    <div v-show="searchType!='undefined'" @click="searchType='undefined'; dagOn=false" class="p-2 text-center hover:bg-white cursor-pointer">
+  <div class="container mx-auto w-2/3 bg-gray-400 rounded-xl shadow border p-4 m-8">
+    <div v-show="searchType!='undefined'" @click="searchType='undefined'; dagOn=false" class="text-center hover:bg-white cursor-pointer">
       <button class="bg-transparent"><img src="../assets/icons8-back-16.png" class="text-center" /></button>
       </div>
     <div v-show="searchType==='undefined'">

@@ -22,8 +22,8 @@ let selectedBranchActor: Ref<Actor | null> = ref(null);
 </script>
 <template>
   <div class="container row-auto flex-row m-2 flex" v-if="!searchOn">
-    <div class="text-center hover:bg-white p-1 cursor-pointer w-1/2" @click="browseOn = true">Browse</div>
-    <div class="text-center hover:bg-white p-1 cursor-pointer w-1/2" @click="searchOn = true">Search</div>
+    <div class="text-center hover:hover:bg-gray-500 cursor-pointer w-1/2" @click="browseOn = true">Browse</div>
+    <div class="text-center hover:hover:bg-gray-500 cursor-pointer w-1/2" @click="searchOn = true">Search</div>
   </div>
   
   <div v-show="searchOn" class="text-center hover:bg-white p-1 cursor-pointer w-1/3" @click="searchOn = false"><img src="../assets/icons8-back-16.png" /></div>

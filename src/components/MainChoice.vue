@@ -24,12 +24,13 @@ let selectedBranchActor: Ref<Actor | null> = ref(null);
   <div class="container row-auto flex-row m-2 flex" v-if="!searchOn">
     <div class="text-center hover:hover:bg-gray-500 cursor-pointer w-1/2" @click="browseOn = true">Browse</div>
     <div class="text-center hover:hover:bg-gray-500 cursor-pointer w-1/2" @click="searchOn = true">Search</div>
+    <div class="text-center hover:hover:bg-gray-500 cursor-pointer w-1/2">Register data</div>
   </div>
   
-  <div v-show="searchOn" class="text-center hover:bg-white p-1 cursor-pointer w-1/3" @click="searchOn = false"><img src="../assets/icons8-back-16.png" /></div>
-  <div class="container flex-row m-2 flex p-1 w-auto"> 
+  <div v-show="searchOn" class="text-center hover:bg-gray-500 p-1 cursor-pointer w-1/3" @click="searchOn = false"><div class="flex"><img src="../assets/icons8-back-16.png" />Back</div></div>
+  <div class="container flex-row m-2 flex p-0 w-auto">
     <div v-show="searchOn" class="text-center p-1 cursor-pointer w-3/4" id="searchBar"><input v-model=searchValue class="w-full" /></div>
-    <div v-show="searchOn" class="text-center hover:bg-white p-1 cursor-pointer w-1/4" @click="searchOn = true, emits.call('yes', 'searchme', searchValue)">Search</div>
+    <div v-show="searchOn" class="text-center hover:bg-gray-500 p-1 cursor-pointer w-1/4" @click="searchOn = true, emits.call('yes', 'searchme', searchValue)">Search</div>
   </div>
 
   <div id="browse" v-show="browseOn && !searchOn" class="content">

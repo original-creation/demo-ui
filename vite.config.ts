@@ -10,7 +10,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        index: 'index.html'
+        index: 'index.html',
+        404: '404.html'
       }
     }
   },

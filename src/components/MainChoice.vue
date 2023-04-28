@@ -53,18 +53,18 @@ let selectedBranchActor: Ref<Actor | null> = ref(null);
 
       <div v-if="selectedBranchActor != undefined">
         <div class="container flex-row flex p-1 w-auto">
-          <div class="text-center hover:bg-white p-1 cursor-pointer w-1/2" @click="productsOn = !productsOn, certificationOn = false">List products</div>
-          <div class="text-center hover:bg-white p-1 cursor-pointer w-1/2" @click="certificationOn = !certificationOn, productsOn = false">List certifications</div>
+          <div class="text-center hover:bg-gray-500 p-1 cursor-pointer w-1/2" @click="productsOn = !productsOn, certificationOn = false">List products</div>
+          <div class="text-center hover:bg-gray-500 p-1 cursor-pointer w-1/2" @click="certificationOn = !certificationOn, productsOn = false">List certifications</div>
         </div>
         <div class="container flex-row m-2 flex p-1 min-w-fit" v-show="productsOn">
           <div v-for="p in mService.getProductItems(selectedBranchActor)">
-            <div class="w-auto text-center hover:bg-white p-1 cursor-pointer border-red-50 border pl-5 pr-5 m-2"  @click="emits.call(undefined, 'browseme', selectedBranchActor.uuid, p.id)">{{
+            <div class="w-auto text-center hover:bg-gray-500 p-1 cursor-pointer border-red-50 border pl-5 pr-5 m-2"  @click="emits.call(undefined, 'browseme', selectedBranchActor.uuid, p.id)">{{
               p.name }}</div>
           </div>
         </div>
         <div class="container flex-row m-2 flex p-1 min-w-fit" v-show="certificationOn">
           <div v-for="c in mService.getCertifications(selectedBranchActor)">
-            <div class="w-auto text-center hover:bg-white p-1 cursor-pointer border-red-50 border pl-5 pr-5 m-2">{{ c.name }}</div>
+            <div class="w-auto text-center hover:bg-gray-500 p-1 cursor-pointer border-red-50 border pl-5 pr-5 m-2">{{ c.name }}</div>
             <!-- @click="emits.call(undefined, 'browseme', selectedBranchActor.uuid, c.id)"-->
           </div>
         </div>

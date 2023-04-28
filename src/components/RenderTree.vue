@@ -7,7 +7,7 @@
         <div class="overflow-ellipsis bg-slate-400  border-emerald-400 border pb-2 pt-1 mb-1 ">{{ currentInfoBox?.title }}</div>
         <div>
             <div v-for=" cpost in currentInfoBox.content">
-                <div class="text-left hover:bg-white p-1 cursor-pointer flex flex-row">
+                <div class="text-left hover:bg-gray-500 p-1 cursor-pointer flex flex-row">
                     <div class="text-left pr-10 cursor-pointer w-1/3 font-bold">{{ cpost.key }}:</div>
                     <div class="text-left pl-10 cursor-pointer w-2/3"> {{ cpost.value }}</div>
                 </div>

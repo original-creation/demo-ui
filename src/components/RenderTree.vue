@@ -3,7 +3,7 @@
     <div>
 
     </div>
-    <div id="dataInfoBox" class="border-spacing-2 border-emerald-400 border-2 w-fit m-2 bg-slate-200" v-show="visibleBox">
+    <div id="dataInfoBox" class="border-spacing-2 border-emerald-400 border-2 w-fit m-2 bg-slate-400" v-show="visibleBox">
         <div class="overflow-ellipsis bg-slate-400  border-emerald-400 border pb-2 pt-1 mb-1 ">{{ currentInfoBox?.title }}</div>
         <div>
             <div v-for=" cpost in currentInfoBox.content">
